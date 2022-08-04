@@ -13,15 +13,17 @@ const collection = {
               value: this[keys[i++]],
               done: i > keys.length
             })
-          }, 1000)
+          }, (2 - i) * 1000)
         })
       }
     }
   }
 }
 
-const iterator = collection[Symbol.asyncIterator]();
-iterator.next().then(res => console.log(res));
-iterator.next().then(res => console.log(res));
-iterator.next().then(res => console.log(res));
-iterator.next().then(res => console.log(res));
+async function loop() {
+  for await (const item of collection) {
+    console.log(item);
+  }
+}
+
+loop()
