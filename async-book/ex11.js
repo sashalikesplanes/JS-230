@@ -26,7 +26,7 @@ async function fetchData(api) {
   return res.json();
 }
 
-function getData() {
+async function getData() {
   return any([
     fetchData(apis[0]),
     fetchData(apis[1]),
