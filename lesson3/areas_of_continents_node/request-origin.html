@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Req Orign</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+ <script type="text/javascript">
+
+    function getAreasOfContinents() {
+      let xhr = new XMLHttpRequest();
+
+      xhr.addEventListener('load', () => {
+        console.log('Areas of continents received!')
+        console.log(xhr.response);
+      });
+
+      xhr.responseType = 'json';
+      xhr.open('GET', 'http://localhost:3000/areas_of_continents');
+      xhr.send();
+    }
+  </script> 
+  </body>
+</html> 

@@ -12,6 +12,7 @@ app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
+  console.log('page not found')
   next(createError(404));
 });
 
